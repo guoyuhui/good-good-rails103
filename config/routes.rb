@@ -13,4 +13,6 @@ Rails.application.routes.draw do
     resources :groups
   end
 
+  resources :myposts
+
 end
