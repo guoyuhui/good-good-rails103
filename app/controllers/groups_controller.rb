@@ -17,7 +17,9 @@ before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destr
     @group = Group.new(group_params)
     @group.user = current_user
 
+
     if @group.save
+      current_user.join!(@group)
       redirect_to groups_path
     else
       render :new
